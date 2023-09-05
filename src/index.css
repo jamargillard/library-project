@@ -579,7 +579,7 @@ select {
 }
 
 .book__selected--figure {
-  width: 40%;
+  width: 100%;
   padding: 16px 32px;
   display: flex;
   justify-content: center;
@@ -589,6 +589,7 @@ select {
 .book__selected--img {
   max-height: 500px;
   width: auto;
+  height: auto;
   max-width: 100%;
 }
 
@@ -806,6 +807,7 @@ select {
   .book__selected--description {
     width: 100%;
   }
+
   .btn__menu {
     display: block;
   }

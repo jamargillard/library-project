@@ -5,6 +5,7 @@ import Home from './pages/home';
 import Books from './pages/Books';
 import {books} from './components/data'
 import BookInfo from './pages/BookInfo.jsx';
+import Cart from './pages/Cart';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
 <Nav />
 <Route path='/home' exact component={Home} />
 <Route path='/Books' exact render={()=> <Books books ={books} />} />
-<Route path='/Books/1' render={()=> <BookInfo books ={books} />} />
+<Route path='/Books/:id' exact render={()=> <BookInfo books ={books} />} />
+<Route path='/cart'  render={()=> <Cart books ={books} />} />
 
 <Footer /> 
     </div>

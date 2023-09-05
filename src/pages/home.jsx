@@ -12,7 +12,7 @@ const Home = () => {
    <Landing></Landing>
 <Highlights></Highlights>
 <Featured></Featured>
-{/* <Discounted></Discounted> */}
+<Discounted></Discounted>
 <Explore></Explore>
 </>
   )
