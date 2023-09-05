@@ -1,17 +1,27 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
+import React, {useState} from 'react'
 import {Link, useParams} from 'react-router-dom'
 import Rating from '../components/ui/Rating'
 import Price from '../components/ui/Price'
 import Book from '../components/ui/Bookie'
 
-const BookInfo = ({ books }) =>  {
+const BookInfo = ({ books, addToCart, cart }) =>  {
     const { id } = useParams();
-    const book = books.find(book => +book.id === +id);
-    console.log(book)
+    const book = books.find((book) => +book.id === +id);
+
+    function addBookToCart(book){
+        addToCart(book);
+    }
+
+function bookExistsOnCart() {
+   return cart.find(book => book.id === +id);
+}
+
+
+
   return (
 <div id="books__body">
-    <main className="books__main">
+    <main id="books__main">
     <div className="books__container">
         <div className="row">
             <div className="book__selected--top">
@@ -39,9 +49,15 @@ const BookInfo = ({ books }) =>  {
                     <p className="book__summary--para">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ea esse dignissimos ex quod hic sit veniam ad repellendus minima vero dolore harum autem fugit voluptatibus distinctio, quisquam vitae rem!
                     </p>
-                    <button className="btn">
+                    {bookExistsOnCart() ?(
+                        <Link to={"/cart"}>
+                         <button className='btn'>Checkout</button>
+                         </Link>
+                   )  : (
+                    <button className="btn" onClick={() => addBookToCart(book)}>
                         Add To Cart
                         </button>
+                    )}
                   </div>
                   </div>
  
