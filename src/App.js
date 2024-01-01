@@ -52,12 +52,11 @@ setCart(cart.filter(book => book.id !== item.id))
     <Router> 
     <div className="App">
 <Nav numberOfItems={numberOfItems()} />
-<Home />
 <Route path='/home' exact component={Home}  />
 <Route path='/Books' exact render={()=> <Books books ={books} />} />
 <Route path='/Books/:id' exact render={()=> <BookInfo books ={books} addToCart={addToCart} cart={cart}/>} />
 <Route path='/cart'  render={()=> <Cart books={books} cart={cart} changeQuantity={changeQuantity} removeItem={removeItem} />} />
-
+<Home></Home>
 <Footer /> 
     </div>
     </Router>
