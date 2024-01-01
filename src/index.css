@@ -480,6 +480,10 @@ Footer {
 
 .footer__logo {
   display: flex;
+  margin-left: 128px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .footer__logo--img {

@@ -5,12 +5,12 @@ import {Link} from 'react-router-dom'
 const Footer   = () => {
   return (
     <div className="container">
-        <div className="row row__column">
             <Link to="/">
                 <figure className="footer__logo">
                     <img src={Logo} alt="" className="footer__logo--img" />
                 </figure>
             </Link>
+        <div className="row row__column">
             <div className="footer__list">
                 <Link to="/home" className="footer__link">Home</Link>
                 <Link to="" className="footer__link no-cursor">About</Link>
